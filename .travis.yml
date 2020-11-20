@@ -30,7 +30,7 @@ jobs:
       name: test app
     -
       script:
-      - sonar-scanner
+      - install sonar:sonar-scanner
       name: check by sonarcloud
     -
       script:
