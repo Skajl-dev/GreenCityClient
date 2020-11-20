@@ -30,14 +30,7 @@ jobs:
       name: test app
     -
       script:
-      - sonar-scanner -D"sonar.projectKey=Green City Client"
-        -D"sonar.host.url=https://sonarcloud.io"
-        -D"sonar.sources=src"
-        -D"sonar.exclusions=**/node_modules/**""
-        -D"sonar.tests=src"
-        -D"sonar.test.inclusions=**/*.spec.ts"
-        -D"sonar.typescript.lcov.reportPaths=coverage/GreenCityClient/lcov.info"
-        -D"sonar.qualitygate.wait=true"
+      - sonar-scanner
       name: check by sonarcloud
     -
       script:
