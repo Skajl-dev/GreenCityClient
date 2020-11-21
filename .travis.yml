@@ -32,12 +32,7 @@ jobs:
       name: test app
     -
       script:
-        - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.3.0.1492-linux.zip
-        - unzip sonar-scanner-cli-3.3.0.1492-linux.zip -d /tmp
-      name: sonar-scanner-install
-    -
-      script:
-        - /tmp/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner.bat
+        - sonar-scanner
       name: check by sonarcloud
     -
       script:
