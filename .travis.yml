@@ -43,7 +43,6 @@ jobs:
         -Dsonar.tests=src
         -Dsonar.test.inclusions=**/*.spec.ts
         -Dsonar.javascript.lcov.reportPaths=coverage/GreenCityClient/lcov.info
-        -Dsonar.qualitygate.wait=true
       name: check by sonarcloud
     -
       script:
