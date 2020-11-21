@@ -42,7 +42,7 @@ jobs:
         -Dsonar.exclusions=**/node_modules/**
         -Dsonar.tests=src
         -Dsonar.test.inclusions=**/*.spec.ts
-        -Dsonar.typescript.lcov.reportPaths=coverage/GreenCityClient/lcov.info
+        -Dsonar.javascript.lcov.reportPaths=coverage/GreenCityClient/lcov.info
         -Dsonar.qualitygate.wait=true
       name: check by sonarcloud
     -
@@ -51,7 +51,7 @@ jobs:
       name: test e2e
     -
       script:      
-      -  ng build --prod --delete-output-path --base-href=/GreenCityClient/ --outputPath=dist_aot && rm -rf dist_aot
+      - ng build --prod --delete-output-path --base-href=/GreenCityClient/ --outputPath=dist_aot && rm -rf dist_aot
       name: build app using aot compilation
     - stage: deploy
       script: ng build --prod --base-href=/GreenCityClient/ --aot=false --build-optimizer=false
