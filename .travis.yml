@@ -32,10 +32,10 @@ jobs:
     -
       script:
       - ng test --watch=false --progress=false --codeCoverage=true --browsers=ChromeHeadless
+      - ls
       name: test app
     -    
       script:
-      - ls
       - sonar-scanner -Dsonar.projectKey=ita-social-projects-green-city-client
         -Dsonar.host.url=https://sonarcloud.io
         -Dsonar.sources=src
