@@ -33,6 +33,7 @@ jobs:
         - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.3.0.1492-linux.zip
         - unzip sonar-scanner-cli-3.3.0.1492-linux.zip -d /tmp
         - /tmp/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner -Dsonar.projectKey=Green City Client
+        -Dsonar.organization=ita-social-projects
         -Dsonar.host.url=https://sonarcloud.io
         -Dsonar.sources=src
         -Dsonar.exclusions=**/node_modules/**
