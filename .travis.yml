@@ -11,6 +11,7 @@ addons:
 cache:
   directories:
     - node_modules
+    - coverage
 
 install:
   - npm install
@@ -32,12 +33,12 @@ jobs:
       name: test app
     -
       script:
-        - sonar-scanner
-      name: check by sonarcloud
-    -
-      script:
       - ng e2e --protractor-config=e2e/protractor-ci.conf.js
       name: test e2e
+    -
+      script:
+        - sonar-scanner
+      name: check by sonarcloud
     -
       script:      
       -  ng build --prod --delete-output-path --base-href=/GreenCityClient/ --outputPath=dist_aot && rm -rf dist_aot
