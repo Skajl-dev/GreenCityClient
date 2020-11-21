@@ -36,7 +36,7 @@ jobs:
       name: test app
     -    
       script:
-      - ls -la coverage && sonar-scanner -Dsonar.projectKey=ita-social-projects-green-city-client
+      -sonar-scanner -Dsonar.projectKey=ita-social-projects-green-city-client
         -Dsonar.host.url=https://sonarcloud.io
         -Dsonar.sources=src
         -Dsonar.exclusions=**/node_modules/**
