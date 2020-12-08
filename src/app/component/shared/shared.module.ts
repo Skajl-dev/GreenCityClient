@@ -2,12 +2,13 @@ import { UserSharedModule } from './../user/components/shared/user-shared.module
 import { NgModule } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FileUploadModule } from 'ng2-file-upload';
 import { MatCardModule } from '@angular/material';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {
   PhotoUploadComponent,
   CancelPopUpComponent,
@@ -19,10 +20,12 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DragAndDropDirective } from '../eco-news/directives/drag-and-drop.directive';
 import { DragAndDropComponent } from './components/drag-and-drop/drag-and-drop.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
+import { MatSnackBarComponent } from '@global-errors/mat-snack-bar/mat-snack-bar.component';
 import { DateLocalisationPipe } from '@pipe/date-localisation-pipe/date-localisation.pipe';
 import { NoDataComponent } from './components/no-data/no-data.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { TagFilterComponent } from './components/tag-filter/tag-filter.component';
+import { CalendarBaseComponent } from './components/calendar-base/calendar-base.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,8 @@ import { TagFilterComponent } from './components/tag-filter/tag-filter.component
     DateLocalisationPipe,
     NoDataComponent,
     SpinnerComponent,
-    TagFilterComponent
+    TagFilterComponent,
+    CalendarBaseComponent
   ],
   imports: [
     ImageCropperModule,
@@ -69,6 +73,7 @@ import { TagFilterComponent } from './components/tag-filter/tag-filter.component
     MatDialogModule,
     MatCheckboxModule,
     MatProgressSpinnerModule,
+    MatSnackBarModule,
     DragAndDropDirective,
     DragAndDropComponent,
     DateLocalisationPipe,
@@ -76,7 +81,8 @@ import { TagFilterComponent } from './components/tag-filter/tag-filter.component
     SpinnerComponent,
     TagFilterComponent,
     UserSharedModule
-  ]
+  ],
+  providers: [MatSnackBarComponent, TranslateService],
 })
 export class SharedModule {}
 

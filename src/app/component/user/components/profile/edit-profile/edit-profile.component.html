@@ -1,7 +1,7 @@
 <div class="container">
     <h2>{{ "user.edit-profile.edit-profile" | translate }}</h2>
     <app-personal-photo></app-personal-photo>
-    <form [formGroup]="editProfileForm" (ngSubmit)="onSubmit()" >
+    <form [formGroup]="editProfileForm" (ngSubmit)="onSubmit()" (keydown.enter)="$event.preventDefault()">
         <div class="wrapper">
             <p>{{ "user.edit-profile.info" | translate }}</p>
             <div class="input-block"
@@ -37,7 +37,7 @@
         </div>
         <div class="wrapper">
             <p>{{"user.edit-profile.links" | translate }}</p>
-            <app-social-networks></app-social-networks>
+            <app-social-networks [socialNetworks]="socialNetworks" (socialNetworksChange)="emitSocialLinks($event)"></app-social-networks>
         </div>
         <div class="privacy-wrapper">
             <p class="title">{{"user.edit-profile.privacy" | translate }}</p>
